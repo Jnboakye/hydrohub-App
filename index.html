@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HydroHub Water Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 font-sans">
+    <!-- Navigation Bar -->
+    <nav class="bg-blue-600 text-white py-4 sticky top-0 z-50 font-sans">
+        <div class="container mx-auto px-4 sm:px-6 flex justify-between items-center">
+
+            <!-- Logo with icon -->
+            <a href="index.html"
+                class="flex items-center space-x-2 text-white text-lg sm:text-xl font-semibold tracking-wide hover:text-blue-200 transition"
+                style="font-family: 'Poppins', sans-serif;">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="currentColor"
+                    viewBox="0 0 24 24" stroke="none">
+                    <path d="M12 2C8.1 7.3 4 12.4 4 16.5 4 20.1 7.1 23 12 23s8-2.9 8-6.5c0-4-4.1-9.2-8-14.5z" />
+                </svg>
+                <span>HydroHub</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="index.html" class="hover:text-gray-200">Home</a>
+                <a href="#services" class="hover:text-gray-200">Services</a>
+                <a href="#about" class="hover:text-gray-200">About</a>
+                <a href="#contact" class="hover:text-gray-200">Contact</a>
+                <a href="order.html"
+                    class="bg-white text-blue-600 px-4 py-2 rounded-lg font-semibold hover:bg-gray-200 transition">Request
+                    Water</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-toggle" class="md:hidden focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-blue-600 text-white">
+            <a href="index.html" class="block px-4 py-2 hover:bg-blue-700">Home</a>
+            <a href="#services" class="block px-4 py-2 hover:bg-blue-700">Services</a>
+            <a href="#about" class="block px-4 py-2 hover:bg-blue-700">About</a>
+            <a href="#contact" class="block px-4 py-2 hover:bg-blue-700">Contact</a>
+            <a href="order.html"
+                class="block px-4 py-2 bg-white text-blue-600 mx-4 my-2 rounded-lg font-semibold hover:bg-gray-200">Request
+                Water</a>
+        </div>
+    </nav>
+
+
+
+    <!-- Hero Section -->
+    <header class="relative bg-cover bg-center text-white py-24 sm:py-32 md:py-40"
+        style="background-image: url('/img/twotrucks.jpg')">
+        <!-- Blue Overlay -->
+        <div class="absolute inset-0 bg-blue-900 bg-opacity-50"></div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 container mx-auto px-6 text-center">
+            <h2 class="text-4xl sm:text-5xl md:text-6xl font-light mb-6 leading-tight max-w-4xl mx-auto tracking-tight">
+                Running low on water?
+            </h2>
+            <p class="text-lg sm:text-xl mb-10 max-w-xl mx-auto text-blue-100">
+                We deliver clean, reliable water across Greater Accra. <br> Fast, Affordable, and a Click Away.
+            </p>
+            <a href="order.html"
+                class="inline-block bg-white text-blue-700 px-6 py-3 sm:px-8 sm:py-4 rounded-full font-medium text-base sm:text-lg hover:bg-blue-100 transition">
+                Get Water Now
+            </a>
+        </div>
+    </header>
+
+
+
+    <!-- Services Section -->
+    <section id="services" class="py-12 sm:py-16 bg-gray-100">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="bg-white rounded-lg shadow-md p-8">
+                <h2 class="text-2xl sm:text-3xl font-semibold text-center mb-10">Our Services</h2>
+
+                <div class="grid gap-10 sm:grid-cols-3 text-center">
+                    <!-- Residential -->
+                    <div class="flex flex-col items-center">
+                        <!-- Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-blue-600 mb-4" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M3 9.75L12 3l9 6.75V21a.75.75 0 01-.75.75H3.75A.75.75 0 013 21V9.75z" />
+                        </svg>
+                        <h3 class="text-lg font-medium mb-2">Residential Delivery</h3>
+                        <p class="text-sm text-gray-600">Clean water to your home, fast. Ideal for tanks, poly tanks,
+                            and
+                            storage containers.</p>
+                    </div>
+
+                    <!-- Commercial -->
+                    <div class="flex flex-col items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-blue-600 mb-4" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                        </svg>
+                        <h3 class="text-lg font-medium mb-2">Commercial Supply</h3>
+                        <p class="text-sm text-gray-600">Reliable bulk water for offices, hotels, restaurants, and event
+                            spaces.</p>
+                    </div>
+
+                    <!-- Industrial -->
+                    <div class="flex flex-col items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-blue-600 mb-4" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M3 3h18v4H3V3zm0 6h18v4H3V9zm0 6h18v4H3v-4z" />
+                        </svg>
+                        <h3 class="text-lg font-medium mb-2">Industrial Solutions</h3>
+                        <p class="text-sm text-gray-600">Large-scale delivery for construction sites, factories, and
+                            warehouses.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+
+                <!-- Image -->
+                <div class="relative w-full h-72 sm:h-96 overflow-hidden rounded-xl shadow-lg">
+                    <img src="/img/image.jpg" alt="Water delivery in Accra"
+                        class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                    <div class="absolute inset-0 bg-blue-900 bg-opacity-30 rounded-xl"></div>
+                </div>
+
+                <!-- Text -->
+                <div class="text-gray-800">
+                    <h2 class="text-3xl sm:text-4xl font-bold mb-4">About Us</h2>
+                    <p class="text-lg leading-relaxed mb-4">
+                        Based in Greater Accra, HydroHub Water Services is committed to making water delivery simple,
+                        fast, and dependable.
+                        We exist to solve a basic but critical challenge — getting fresh, clean water to where it's
+                        needed most.
+                    </p>
+                    <p class="text-lg leading-relaxed mb-4">
+                        From homes and restaurants to hotels, events, and construction sites, we deliver water in bulk
+                        with speed and precision.
+                        Whether you're planning ahead or facing an emergency, we’re just a call away.
+                    </p>
+                    <p class="text-lg leading-relaxed">
+                        Our same-day and emergency delivery options are designed to keep your operations running without
+                        interruption.
+                        With transparent pricing and no hidden charges, you always know what to expect — and when.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-10 mt-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 text-sm">
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="font-semibold mb-3">Contact</h3>
+                    <p>Dansoman Water works</p>
+                    <p>East Legon</p>
+                    <p>Kasoa</p>
+                    <p>Weija</p>
+                    <p>Email: hydrohubwaterservices@gmail.com</p>
+                    <p>Phone: +233 59 155 6535</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="font-semibold mb-3">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="hover:underline">Services</a></li>
+                        <li><a href="#about" class="hover:underline">About</a></li>
+                        <li><a href="order.html" class="hover:underline">Request Water</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social -->
+                <div>
+                    <h3 class="font-semibold mb-3">Follow Us</h3>
+                    <div class="flex space-x-4 mt-2">
+                        <a href="#" class="hover:text-blue-400">
+                            <i class="fa-brands fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="hover:text-blue-400">
+                            <i class="fa-brands fa-tiktok text-xl"></i>
+                        </a>
+                        <a href="#" class="hover:text-blue-400">
+                            <i class="fa-brands fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="hover:text-blue-400">
+                            <i class="fa-brands fa-x-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="hover:text-blue-400">
+                            <i class="fa-brands fa-snapchat text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="text-center text-xs text-gray-400 mt-8">
+                © 2025 HydroHub. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', () => {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+
+</html>
