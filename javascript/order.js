@@ -1,55 +1,50 @@
 // Pricing logic (placeholder - adjust to match your backend)
 const pricing = {
-    dansoman: { deliveryFee: 10, pricePerLitre: 0.05 },
-    eastlegon: { deliveryFee: 20, pricePerLitre: 0.06 },
-    spintex: { deliveryFee: 30, pricePerLitre: 0.07 },
-    weija: { deliveryFee: 15, pricePerLitre: 0.05 },
-    kasoa: { deliveryFee: 30, pricePerLitre: 0.06 },
-    awoshie: { deliveryFee: 12, pricePerLitre: 0.05 },
-    kaneshie: { deliveryFee: 14, pricePerLitre: 0.05 },
-    osu: { deliveryFee: 8, pricePerLitre: 0.045 },
-    ablekuma: { deliveryFee: 16, pricePerLitre: 0.052 },
-    teshie: { deliveryFee: 18, pricePerLitre: 0.055 },
-    lapaz: { deliveryFee: 15, pricePerLitre: 0.05 },
-    achimota: { deliveryFee: 14, pricePerLitre: 0.052 },
-    nungua: { deliveryFee: 17, pricePerLitre: 0.055 },
-    latebiokoshie: { deliveryFee: 13, pricePerLitre: 0.05 },
-    burmacamp: { deliveryFee: 18, pricePerLitre: 0.055 },
-    sowutoum: { deliveryFee: 15, pricePerLitre: 0.05 },
-    oyarifa: { deliveryFee: 22, pricePerLitre: 0.06 },
-    danfa: { deliveryFee: 24, pricePerLitre: 0.06 },
-    oyibi: { deliveryFee: 26, pricePerLitre: 0.06 },
-    madina: { deliveryFee: 18, pricePerLitre: 0.055 },
-    lakeside: { deliveryFee: 20, pricePerLitre: 0.057 },
-    teiman: { deliveryFee: 21, pricePerLitre: 0.058 },
-    abokobi: { deliveryFee: 22, pricePerLitre: 0.058 },
-    old_ashongman: { deliveryFee: 18, pricePerLitre: 0.055 },
-    new_ashongman: { deliveryFee: 19, pricePerLitre: 0.055 },
-    kwashieman: { deliveryFee: 14, pricePerLitre: 0.05 },
-    airport_residential: { deliveryFee: 10, pricePerLitre: 0.045 },
-    roman_ridge: { deliveryFee: 10, pricePerLitre: 0.045 },
-    dzorwulu: { deliveryFee: 11, pricePerLitre: 0.048 },
-    abelemkpe: { deliveryFee: 11, pricePerLitre: 0.048 },
-    adjiringanor: { deliveryFee: 20, pricePerLitre: 0.06 },
-    ashaley_botwe: { deliveryFee: 22, pricePerLitre: 0.06 },
-    tesano: { deliveryFee: 13, pricePerLitre: 0.05 },
-    abeka: { deliveryFee: 13, pricePerLitre: 0.05 },
-    odokor: { deliveryFee: 12, pricePerLitre: 0.05 },
-    nima: { deliveryFee: 10, pricePerLitre: 0.045 },
-    darkuman: { deliveryFee: 14, pricePerLitre: 0.05 }
+    // Zone 1: 600 cedis for 5000L, 850 above 5000L
+    eastlegon: { deliveryFee: 20, pricePerLitre: 600 / 5000 },
+    adjiringanor: { deliveryFee: 20, pricePerLitre: 600 / 5000 },
+    ashaley_botwe: { deliveryFee: 22, pricePerLitre: 600 / 5000 },
+    ablekuma: { deliveryFee: 16, pricePerLitre: 600 / 5000 },
+    achimota: { deliveryFee: 14, pricePerLitre: 600 / 5000 },
+    airport_residential: { deliveryFee: 10, pricePerLitre: 600 / 5000 },
+    abokobi: { deliveryFee: 22, pricePerLitre: 600 / 5000 },
+    roman_ridge: { deliveryFee: 10, pricePerLitre: 600 / 5000 },
+    abelemkpe: { deliveryFee: 11, pricePerLitre: 600 / 5000 },
+    dzorwulu: { deliveryFee: 11, pricePerLitre: 600 / 5000 },
+    tesano: { deliveryFee: 13, pricePerLitre: 600 / 5000 },
+    osu: { deliveryFee: 8, pricePerLitre: 600 / 5000 },
+    sowutoum: { deliveryFee: 15, pricePerLitre: 600 / 5000 },
+    nima: { deliveryFee: 10, pricePerLitre: 600 / 5000 },
+    new_ashongman: { deliveryFee: 19, pricePerLitre: 600 / 5000 },
+    old_ashongman: { deliveryFee: 18, pricePerLitre: 600 / 5000 },
+
+    // Zone 2: 500 cedis for 5000L, 750 above 5000L
+    dansoman: { deliveryFee: 10, pricePerLitre: 500 / 5000 },
+    kwashieman: { deliveryFee: 14, pricePerLitre: 500 / 5000 },
+    odokor: { deliveryFee: 12, pricePerLitre: 500 / 5000 },
+    darkuman: { deliveryFee: 14, pricePerLitre: 500 / 5000 },
+    lapaz: { deliveryFee: 15, pricePerLitre: 500 / 5000 },
+    abeka: { deliveryFee: 13, pricePerLitre: 500 / 5000 },
+    awoshi: { deliveryFee: 12, pricePerLitre: 500 / 5000 },
+    weija: { deliveryFee: 15, pricePerLitre: 500 / 5000 },
+    kaneshie: { deliveryFee: 14, pricePerLitre: 500 / 5000 },
 };
+
+// Helper: Calculate price based on location and water amount
+function calculateEstimatedPrice(location, waterAmount) {
+    if (location && waterAmount) {
+        const { deliveryFee, pricePerLitre } = pricing[location];
+        return (waterAmount * pricePerLitre + deliveryFee).toFixed(2);
+    }
+    return '0.00';
+}
 
 // Update price estimate dynamically
 function updatePriceEstimate() {
     const location = document.getElementById('location').value;
     const waterAmount = parseFloat(document.getElementById('water-amount').value) || 0;
-    if (location && waterAmount) {
-        const { deliveryFee, pricePerLitre } = pricing[location];
-        const totalPrice = (waterAmount * pricePerLitre + deliveryFee).toFixed(2);
-        document.getElementById('price-estimate').textContent = `GHS${totalPrice}`;
-    } else {
-        document.getElementById('price-estimate').textContent = 'GHS0.00';
-    }
+    const totalPrice = calculateEstimatedPrice(location, waterAmount);
+    document.getElementById('price-estimate').textContent = `GHS${totalPrice}`;
 }
 
 // Event listeners for dynamic price updates
@@ -64,13 +59,17 @@ document.getElementById('water-order-form').addEventListener('submit', async (e)
     button.disabled = true;
     button.textContent = 'Submitting...';
 
+    const location = document.getElementById('location').value;
+    const waterAmount = parseFloat(document.getElementById('water-amount').value) || 0;
+    const totalPrice = calculateEstimatedPrice(location, waterAmount);
+
     const formData = {
         full_name: document.getElementById('full-name').value,
         phone: document.getElementById('phone').value,
-        location: document.getElementById('location').value,
-        water_amount: parseFloat(document.getElementById('water-amount').value),
+        location: location,
+        water_amount: waterAmount,
         delivery_time: document.getElementById('delivery-time').value,
-        estimated_price: document.getElementById('price-estimate').textContent.replace("GHS", "").trim()
+        estimated_price: totalPrice
     };
 
     // Client-side validation
@@ -81,9 +80,7 @@ document.getElementById('water-order-form').addEventListener('submit', async (e)
         return;
     }
 
-    if (
-        !/^(02\d{8}|030\d{7}|05\d{8})$/.test(formData.phone)
-    ) {
+    if (!/^(02\d{8}|030\d{7}|05\d{8})$/.test(formData.phone)) {
         alert('Please enter a valid 10-digit phone number');
         button.disabled = false;
         button.textContent = 'Submit Request';
@@ -104,16 +101,14 @@ document.getElementById('water-order-form').addEventListener('submit', async (e)
         return;
     }
 
-
     try {
         const response = await fetch('https://script.google.com/macros/s/AKfycbxALnuFm9_wu_xHMNbqq5AMS2aacWzM-pE0k4oOgG8THlD8UgPYWz-uVRcOfPCPEhw7Fw/exec', {
             method: 'POST',
-            // mode: 'no-cors', // Required for Google Apps Script Web App if not published as "Anyone"
+            mode: 'no-cors',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData)
         });
 
-        // Since no-cors mode doesn't return a readable response, assume success
         alert('Order submitted successfully!');
         document.getElementById('water-order-form').reset();
         document.getElementById('price-estimate').textContent = 'GHS0.00';
