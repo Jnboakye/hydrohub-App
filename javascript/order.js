@@ -108,7 +108,7 @@ document.getElementById('water-order-form').addEventListener('submit', async (e)
     try {
         const response = await fetch('https://script.google.com/macros/s/AKfycbxALnuFm9_wu_xHMNbqq5AMS2aacWzM-pE0k4oOgG8THlD8UgPYWz-uVRcOfPCPEhw7Fw/exec', {
             method: 'POST',
-            mode: 'no-cors', // Required for Google Apps Script Web App if not published as "Anyone"
+            // mode: 'no-cors', // Required for Google Apps Script Web App if not published as "Anyone"
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData)
         });
